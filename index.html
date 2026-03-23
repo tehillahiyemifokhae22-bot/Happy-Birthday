@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Mummy ❤️</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #ff758c, #ff7eb3);
+    color: white;
+    text-align: center;
+    overflow-x: hidden;
+}
+
+/* CONTAINER */
+.container {
+    padding: 20px;
+}
+
+/* TITLE */
+h1 {
+    font-size: 2.5em;
+    animation: glow 2s infinite alternate;
+}
+
+@keyframes glow {
+    from { text-shadow: 0 0 10px white; }
+    to { text-shadow: 0 0 25px #ff4d6d; }
+}
+
+/* IMAGE */
+.photo img {
+    width: 80%;
+    max-width: 280px;
+    border-radius: 20px;
+    margin: 20px 0;
+    box-shadow: 0 0 20px rgba(0,0,0,0.4);
+}
+
+/* MESSAGE */
+.message {
+    background: rgba(255,255,255,0.2);
+    padding: 20px;
+    border-radius: 20px;
+    max-width: 600px;
+    margin: auto;
+    font-size: 1.1em;
+    line-height: 1.8;
+}
+
+/* HEART BEAT */
+.heart {
+    font-size: 2em;
+    animation: beat 1s infinite;
+}
+
+@keyframes beat {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.3); }
+    100% { transform: scale(1); }
+}
+
+/* FLOATING HEARTS */
+.heart-float {
+    position: fixed;
+    bottom: -10px;
+    font-size: 20px;
+    animation: floatUp linear infinite;
+}
+
+@keyframes floatUp {
+    0% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-100vh);
+        opacity: 0;
+    }
+}
+
+/* CAKE */
+.cake {
+    margin: 20px auto;
+    width: 100px;
+    height: 100px;
+    position: relative;
+}
+
+.layer {
+    width: 100px;
+    height: 30px;
+    background: #ff4d6d;
+    border-radius: 10px;
+    position: absolute;
+}
+
+.layer1 { top: 40px; }
+.layer2 { top: 20px; width: 80px; left: 10px; }
+.layer3 { top: 0; width: 60px; left: 20px; }
+
+.candle {
+    width: 10px;
+    height: 25px;
+    background: white;
+    position: absolute;
+    top: -25px;
+    left: 45px;
+}
+
+.flame {
+    width: 10px;
+    height: 10px;
+    background: yellow;
+    border-radius: 50%;
+    position: absolute;
+    top: -10px;
+    left: 0;
+    animation: flicker 0.3s infinite alternate;
+}
+
+@keyframes flicker {
+    from { transform: scale(1); }
+    to { transform: scale(1.3); }
+}
+
+footer {
+    margin-top: 30px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+    <h1>🎉 Happy Birthday Mummy 🎉</h1>
+
+    <!-- IMAGE -->
+    <div class="photo">
+        <img src="mummy.jpg">
+    </div>
+
+    <!-- CAKE -->
+    <div class="cake">
+        <div class="layer layer1"></div>
+        <div class="layer layer2"></div>
+        <div class="layer layer3"></div>
+        <div class="candle">
+            <div class="flame"></div>
+        </div>
+    </div>
+
+    <!-- MESSAGE -->
+    <div class="message">
+        <p><strong>Mummy Happpyyyyy birthday 💖</strong></p>
+
+        <p>
+            I pray that the Lord blesses you continuously.<br>
+            May you always find favor in God’s eyes.<br>
+            May your smile never cease.<br>
+            May your face glow continuously.
+        </p>
+
+        <p>
+            As God has added another year to your life,<br>
+            may He continue to add many more.<br>
+            As this new age starts may that means your blessings are coming.
+        </p>
+
+        <p>
+            I know we may not always be on the same terms<br>
+            or I may seem stubborn sometimes,<br>
+            but mummy I just want you to know that i love you ❤️ and I always will.
+        </p>
+
+        <p>
+            I am grateful to God for making me your first daughter<br>
+            and Im happy to know you are here for me and I am here for you.
+        </p>
+
+        <p>
+            God bless you and I love you.<br>
+            Have the best day.<br>
+            Amen.
+        </p>
+
+        <div class="heart">❤️</div>
+    </div>
+
+    <footer>Made with love 💕</footer>
+</div>
+
+<!-- FLOATING HEARTS SCRIPT -->
+<script>
+function createHeart() {
+    const heart = document.createElement("div");
+    heart.classList.add("heart-float");
+    heart.innerHTML = "❤️";
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.animationDuration = (Math.random() * 3 + 2) + "s";
+    document.body.appendChild(heart);
+
+    setTimeout(() => {
+        heart.remove();
+    }, 5000);
+}
+
+setInterval(createHeart, 300);
+</script>
+
+</body>
+</html>
